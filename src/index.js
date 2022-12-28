@@ -4,11 +4,13 @@ import './index.css';
 //import App from './App';
 //import reportWebVitals from './reportWebVitals';
 import Notebook from './BarChart';
+import { default as Projection } from './Projection'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Notebook />
+    <Projection />
   </React.StrictMode>
 );
 
