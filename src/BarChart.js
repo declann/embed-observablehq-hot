@@ -1,15 +1,19 @@
 import React, {useRef, useEffect} from "react";
-import {Runtime, Inspector} from "@observablehq/runtime";
+import {Runtime, Inspector, Library} from "@observablehq/runtime";
 import notebook from "1b4b9efd5b629785";
+
+import alphabet from './alphabet.js';
 
 function Notebook() {
   const myBarChartRef = useRef();
 
   useEffect(() => {
-    const runtime = new Runtime();
+    const runtime = new Runtime(/*Object.assign(new Library, {})*/ /* fails */);
     runtime.module(notebook, name => {
       if (name === "myBarChart") return new Inspector(myBarChartRef.current);
     });
+    // fails:
+    //runtime.redefine("data", JSON.parse(`[{"letter":"E","frequency":0.12702},{"letter":"T","frequency":0.09056},{"letter":"A","frequency":0.08167},{"letter":"O","frequency":0.07507},{"letter":"I","frequency":0.06966},{"letter":"N","frequency":0.06749},{"letter":"S","frequency":0.06327},{"letter":"H","frequency":0.06094},{"letter":"R","frequency":0.05987},{"letter":"D","frequency":0.04253},{"letter":"L","frequency":0.04025},{"letter":"C","frequency":0.02782},{"letter":"U","frequency":0.02758},{"letter":"M","frequency":0.02406},{"letter":"W","frequency":0.0236},{"letter":"F","frequency":0.02288},{"letter":"G","frequency":0.02015},{"letter":"Y","frequency":0.01974},{"letter":"P","frequency":0.01929},{"letter":"B","frequency":0.01492},{"letter":"V","frequency":0.00978},{"letter":"K","frequency":0.00772},{"letter":"J","frequency":0.00153},{"letter":"X","frequency":0.0015},{"letter":"Q","frequency":0.00095},{"letter":"Z","frequency":0.00074}]`));
     return () => runtime.dispose();
   }, []);
 
