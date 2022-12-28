@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "1b4b9efd5b629785": "https://api.observablehq.com/d/1b4b9efd5b629785@495.tgz?v=3",
+    "@observablehq/runtime": "5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
