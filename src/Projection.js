@@ -2,6 +2,8 @@ import React, {useRef, useEffect} from "react";
 import {Runtime, Inspector} from "@observablehq/runtime";
 import notebook from "f0397f5d636d6705";
 
+// HMR for a model will be different ...
+
 function Notebook() {
   const projection_primeRef = useRef();
   const modelsRef = useRef();
