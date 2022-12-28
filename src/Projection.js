@@ -7,9 +7,14 @@ function Notebook() {
 
   useEffect(() => {
     const runtime = new Runtime();
-    runtime.module(notebook, name => {
+    const m = runtime.module(notebook, name => {
       if (name === "projection_prime") return new Inspector(projection_primeRef.current);
     });
+    m.value("models").then(models => {
+      m.redefine("models", [...models, {x:n=>n, y:n=>n,dy:n=>n,compressed:n=>true}])
+    })
+    //console.log(t)
+    
     return () => runtime.dispose();
   }, []);
 
