@@ -1,3 +1,8 @@
-const model = {x:n=>n, y:n=>n,dy:n=>n,compressed:n=>true} //
+const model = {
+  x: (n) => n,
+  y: (n) => n,
+  dy: (n) => 0,
+  compressed: (n) => true + 8,
+}; //
 
-export default model
+export default model;

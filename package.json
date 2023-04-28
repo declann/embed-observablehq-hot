@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "1b4b9efd5b629785": "https://api.observablehq.com/d/1b4b9efd5b629785@495.tgz?v=3",
     "@observablehq/runtime": "5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "1b4b9efd5b629785": "https://api.observablehq.com/d/1b4b9efd5b629785@495.tgz?v=3",
     "f0397f5d636d6705": "https://api.observablehq.com/d/f0397f5d636d6705@622.tgz?v=3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -37,5 +37,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@calculang/calculang-js": "^0.1.0-alpha.5"
   }
 }
